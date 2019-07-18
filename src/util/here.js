@@ -37,14 +37,15 @@ export const here = {
                 method: 'post',
                 body: JSON.stringify(data)})}).then(response => {
                 return response.json()}).then( responseJson => {
-                  console.log(responseJson);
                   if (responseJson.results.items) {
-                    return responseJson.results.items.map( poi => ({id: poi.id,
+
+                    return responseJson.results.items.map( poi => ({
+                      id: poi.id,
                       name: poi.title,
                       address: poi.vicinity,
                       category: poi.category.title,
-                      hours: poi.openingHours.text,
-                      isOpen: poi.openingHours.isOpen
+                      //hours: poi.openingHours.text,
+                      //isOpen: poi.openingHours.isOpen
           }));
         }
       });
