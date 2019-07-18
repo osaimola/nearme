@@ -23,9 +23,10 @@ class App extends React.Component {
   }
 
   search(term, location) {
-    here.search(term, location).then( image => {console.log(image)});
-    //here.search(term, location).then(pois => this.setState({poiList: pois}));
-    console.log(term + " " + location);
+    //here.mapImageSearch( location).then( image => {console.log(image)});
+    here.search(term, location).then(pois =>
+     // console.log(pois));
+    this.setState({poiList: pois}));
     // get list of pois and get a small map image
   }
   render() {
