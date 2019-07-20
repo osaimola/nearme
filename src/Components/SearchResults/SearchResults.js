@@ -5,7 +5,12 @@ import './SearchResults.css'
 export class SearchResults extends React.Component {
   render() {
     const pois = this.props.searchResults.map(result => {
-      return <POI name={result.name} address={result.address} hours={result.hours} isOpen={result.isOpen}/>
+      return <POI key={"poi_" + result.id}
+                  name={result.name}
+                  address={result.address}
+                  hours={result.hours ? result.hours : undefined}
+                  isOpen={result.hasOwnProperty('isOpen') ? result.isOpen : undefined}
+      />
     });
 
     return (
