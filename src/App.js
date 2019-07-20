@@ -4,14 +4,6 @@ import {SearchResults} from "./Components/SearchResults/SearchResults";
 import {SearchBar} from "./Components/SearchBar/SearchBar";
 import {here} from "./util/here";
 
-const poi = {name: "West Edmonton Mall",
-  id: "123hghjd",
-  address: "8882 170 St NW<br/>Edmonton, AB T5T",
-  hours: "Mon-Sat: 10:00 - 21:00<br/>Sun: 11:00 - 18:00",
-  isOpen:true
-};
-//const pois = [poi, poi, poi, poi, poi, poi];
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +17,7 @@ class App extends React.Component {
   search(term, location) {
     //here.mapImageSearch( location).then( image => {console.log(image)});
     here.search(term, location).then(pois =>
-     // console.log(pois));
+     //console.log(pois));
     this.setState({poiList: pois}));
     // get list of pois and get a small map image
   }
