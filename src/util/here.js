@@ -38,14 +38,14 @@ export const here = {
                 body: JSON.stringify(data)})}).then(response => {
                 return response.json()}).then( responseJson => {
                   if (responseJson.results.items) {
-
+                    console.log(responseJson);
                     return responseJson.results.items.map( poi => ({
                       id: poi.id,
                       name: poi.title,
                       address: poi.vicinity,
                       category: poi.category.title,
-                      //hours: poi.openingHours.text,
-                      //isOpen: poi.openingHours.isOpen
+                      ...(poi.hasOwnProperty('openingHours') && {hours: poi.openingHours.text}),
+                      ...(poi.hasOwnProperty('openingHours') && {isOpen: poi.openingHours.isOpen})
           }));
         }
       });
