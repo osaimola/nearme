@@ -1,5 +1,5 @@
-import React from 'react';
-import './SearchBar.css';
+import React from "react";
+import "./SearchBar.css";
 
 export class SearchBar extends React.Component {
   constructor(props) {
@@ -18,19 +18,28 @@ export class SearchBar extends React.Component {
   }
 
   handleTermChange(e) {
-    this.setState({term: e.target.value});
+    this.setState({ term: e.target.value });
   }
 
   handleLocationChange(e) {
-    this.setState({location: e.target.value});
+    this.setState({ location: e.target.value });
   }
 
   render() {
     return (
       <div className="SearchBar">
         <div className="SearchBar-fields">
-          <input placeholder="What are you looking for?" className="field"  onChange={this.handleTermChange}/>
-          <input placeholder="Where?" className="field" style={{width:30+"%"}}  onChange={this.handleLocationChange}/>
+          <input
+            placeholder="What are you looking for?"
+            className="field"
+            onChange={this.handleTermChange}
+          />
+          <input
+            placeholder="Where?"
+            className="field"
+            style={{ width: 30 + "%" }}
+            onChange={this.handleLocationChange}
+          />
         </div>
         <div className="SearchBar-submit">
           <a onClick={this.handleClick}>Find</a>
