@@ -1,8 +1,10 @@
 import React from "react";
 import "./POI.css";
+import { Keys } from "../../util/keys";
 
 export class POI extends React.Component {
   // this handles displaying if the business is open/closed or we dont have that info
+
   isOpen(decider) {
     if (decider) {
       if (decider === "unknown") {
@@ -15,13 +17,14 @@ export class POI extends React.Component {
   }
 
   render() {
+    let apiKey = Keys.placesAPIKey;
     let poi = this.props.result;
     let hoursChecker = poi.opening_hours
       ? poi.opening_hours.open_now
       : "unknown";
     let photoId = poi.photos ? poi.photos[0].photo_reference : false;
     let photoURL = photoId
-      ? `url(https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoId}&key=AIzaSyDoF9cMmMxTRvRVS61KE1GXTIaIqY6-M68)`
+      ? `url(https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoId}&key=${apiKey})`
       : "";
 
     return (
