@@ -1,21 +1,27 @@
-import React from 'react';
-import {POI} from '../POI/POI';
-import './SearchResults.css'
+import React from "react";
+import { POI } from "../POI/POI";
+import Weather from "../Weather/Weather";
+import "./SearchResults.css";
 
 export class SearchResults extends React.Component {
-  render() {
-    const pois = this.props.searchResults.map(result => {
-      return <POI key={"poi_" + result.id}
-                  name={result.name}
-                  address={result.address}
-                  hours={result.hours ? result.hours : undefined}
-                  isOpen={result.hasOwnProperty('isOpen') ? result.isOpen : undefined}
-      />
-    });
+  renderWeather() {
+    if (this.props.weatherForecast.hasOwnProperty("condition")) {
+      return <Weather weatherForecast={this.props.weatherForecast} />;
+    }
+    return "";
+  }
 
+  renderPOI() {
+    return this.props.searchResults.map(result => {
+      return <POI key={"poi_" + result.id} result={result} />;
+    });
+  }
+
+  render() {
     return (
       <div className="productlistarea">
-        {pois}
+        {this.renderWeather()}
+        {this.renderPOI()}
       </div>
     );
   }
