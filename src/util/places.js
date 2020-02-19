@@ -20,7 +20,7 @@ export const places = {
   },
 
   getForcast(location) {
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weatherAPIKey}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weatherAPIKey}`;
 
     return fetch(url)
       .then(response => {
