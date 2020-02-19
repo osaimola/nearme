@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 export const Keys = {
   apiKey: process.env.GOOGLEPLACESAPIKEY,
   weatherAPIKey: process.env.OPENWEATHERAPIKEY,
