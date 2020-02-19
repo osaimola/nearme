@@ -10,7 +10,7 @@ class Weather extends Component {
   generateForecast(forecast) {
     return `Expect ${forecast.description} and temperatures of ${Math.round(
       forecast.temperature - 273
-    )}°C with a ${Math.round(forecast.feel - 273)}°C feel`;
+    )}°C with a ${Math.round(forecast.feel - 273)}°C real feel`;
   }
 
   render() {
