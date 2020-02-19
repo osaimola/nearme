@@ -1,4 +1,4 @@
-const Keys = {
+export const Keys = {
   apiKey: process.env.GOOGLEPLACESAPIKEY,
   weatherAPIKey: process.env.OPENWEATHERAPIKEY,
   appId: process.env.APPID,
