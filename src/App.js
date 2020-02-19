@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { SearchResults } from "./Components/SearchResults/SearchResults";
 import { SearchBar } from "./Components/SearchBar/SearchBar";
 import { here } from "./util/here";
