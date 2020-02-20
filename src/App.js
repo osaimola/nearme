@@ -30,7 +30,7 @@ class App extends React.Component {
       places
         .getForcast(location)
         .then(weather => this.setState({ weather: weather })),
-      800
+      8000
     );
   }
   render() {
