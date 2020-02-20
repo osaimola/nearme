@@ -10,9 +10,16 @@ export const places = {
       ? (searchTerm = term + " " + location)
       : (searchTerm = term);
     let cors = "https://cors-anywhere.herokuapp.com/";
-    let url = `${cors}https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchTerm}&key=${apiKey}`;
+    let url = `https://pumbar0ym5.execute-api.us-east-1.amazonaws.com/default/React_Middle_Man`;
 
-    return fetch(url)
+    return fetch(url, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ term: searchTerm, service: "places" })
+    })
       .then(response => response.json())
       .then(jsonResponse => {
         return jsonResponse.results;
@@ -20,9 +27,16 @@ export const places = {
   },
 
   getForcast(location) {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weatherAPIKey}`;
+    let url = `https://pumbar0ym5.execute-api.us-east-1.amazonaws.com/default/React_Middle_Man`;
 
-    return fetch(url)
+    return fetch(url, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ location: location, service: "weather" })
+    })
       .then(response => {
         return response.json();
       })
