@@ -27,9 +27,10 @@ class App extends React.Component {
       .then(pois => this.setState({ poiList: pois }));*/
 
     console.log(location);
-    places
-      .getForcast(location)
-      .then(weather => this.setState({ weather: weather }));
+    places.getForcast(location).then(weather => {
+      console.log(weather);
+      this.setState({ weather: weather });
+    });
   }
   render() {
     return (
