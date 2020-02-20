@@ -35,7 +35,7 @@ export const places = {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ location: location, service: "weather" })
+      body: JSON.stringify({ place: location, service: "weather" })
     })
       .then(response => {
         return response.json();
