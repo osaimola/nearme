@@ -1,7 +1,6 @@
 import React from "react";
 import { SearchResults } from "./Components/SearchResults/SearchResults";
 import { SearchBar } from "./Components/SearchBar/SearchBar";
-import { here } from "./util/here";
 import { places } from "./util/places";
 
 class App extends React.Component {

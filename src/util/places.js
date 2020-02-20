@@ -1,7 +1,3 @@
-import { Keys } from "./keys";
-
-const apiKey = Keys.placesAPIKey;
-const weatherAPIKey = Keys.openweatherAPIKey;
 let cors = "https://cors-anywhere.herokuapp.com/";
 
 export const places = {

@@ -4,7 +4,7 @@ import "./Weather.css";
 class Weather extends Component {
   generateIcon(icon) {
     //return `url(http://openweathermap.org/img/wn/${icon}.png)`;
-    return `http://openweathermap.org/img/wn/${icon}.png`;
+    return `https://openweathermap.org/img/wn/${icon}.png`;
   }
 
   generateForecast(forecast) {
