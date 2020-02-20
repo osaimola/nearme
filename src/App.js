@@ -24,16 +24,14 @@ class App extends React.Component {
 
     places
       .search(term, location)
-      .then(pois => this.setState({ poiList: pois }))
-      .then(
-        places
-          .getForcast(location)
-          .then(weather => this.setState({ weather: weather }))
-      );
+      .then(pois => this.setState({ poiList: pois }));
 
-    places
-      .getForcast(location)
-      .then(weather => this.setState({ weather: weather }));
+    setTimeout(
+      places
+        .getForcast(location)
+        .then(weather => this.setState({ weather: weather })),
+      800
+    );
   }
   render() {
     return (
