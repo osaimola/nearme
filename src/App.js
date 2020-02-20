@@ -22,15 +22,13 @@ class App extends React.Component {
     //this.setState({poiList: pois}));
     // get list of pois and get a small map image
 
-    /*places
+    places
       .search(term, location)
-      .then(pois => this.setState({ poiList: pois }));*/
+      .then(pois => this.setState({ poiList: pois }));
 
-    console.log(location);
-    places.getForcast(location).then(weather => {
-      console.log(weather);
-      this.setState({ weather: weather });
-    });
+    places
+      .getForcast(location)
+      .then(weather => this.setState({ weather: weather }));
   }
   render() {
     return (
