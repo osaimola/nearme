@@ -41,6 +41,7 @@ export const places = {
         return response.json();
       })
       .then(jsonResponse => {
+        console.log(jsonResponse);
         return jsonResponse.hasOwnProperty["main"]
           ? {
               temperature: jsonResponse.main.temp,

@@ -26,6 +26,7 @@ class App extends React.Component {
       .search(term, location)
       .then(pois => this.setState({ poiList: pois }));*/
 
+    console.log(location);
     places
       .getForcast(location)
       .then(weather => this.setState({ weather: weather }));
