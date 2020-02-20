@@ -33,7 +33,7 @@ export class POI extends React.Component {
           <div
             className="thumb"
             style={{
-              backgroundImage: "https://picsum.photos/400.jpg"
+              backgroundImage: "url(https://picsum.photos/400.jpg)"
             }}
           ></div>
           <article>
