@@ -2,6 +2,7 @@ import { Keys } from "./keys";
 
 const apiKey = Keys.placesAPIKey;
 const weatherAPIKey = Keys.openweatherAPIKey;
+let cors = "https://cors-anywhere.herokuapp.com/";
 
 export const places = {
   search(term, location) {
@@ -9,8 +10,7 @@ export const places = {
     term && location
       ? (searchTerm = term + " " + location)
       : (searchTerm = term);
-    let cors = "https://cors-anywhere.herokuapp.com/";
-    let url = `https://pumbar0ym5.execute-api.us-east-1.amazonaws.com/default/React_Middle_Man`;
+    let url = `${cors}https://pumbar0ym5.execute-api.us-east-1.amazonaws.com/default/React_Middle_Man`;
 
     return fetch(url, {
       method: "post",
@@ -27,7 +27,7 @@ export const places = {
   },
 
   getForcast(location) {
-    let url = `https://pumbar0ym5.execute-api.us-east-1.amazonaws.com/default/React_Middle_Man`;
+    let url = `${cors}https://pumbar0ym5.execute-api.us-east-1.amazonaws.com/default/React_Middle_Man`;
 
     return fetch(url, {
       method: "post",
